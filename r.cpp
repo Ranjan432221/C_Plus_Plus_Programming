@@ -2,13 +2,21 @@
 using namespace std;
 int main()
 {
-    int n,f=1;
-    cout<<"enter any number which you want to print";
-    cin>>n;
-    for(int i=1;i<=n;i++)
-    {
-        f = f*n;
-        n = n-1;
-    }
-    cout<<"the factorial ="<<f<<endl;
+    int a,b,c;
+cout<<"enter three element :";
+cin>>a;
+cin>>b;
+cin>>c;
+if(a>b&&a>c)
+{
+    cout<<"a is greater:"<<a;
+}
+else if(b>a&&b>c)
+{
+    cout<<"b is greater:"<<b;
+}
+else
+{
+    cout<<"c is greater:"<<c;
+}
 }
