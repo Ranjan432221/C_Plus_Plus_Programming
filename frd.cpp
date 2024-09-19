@@ -1,40 +1,52 @@
 #include<iostream>
 using namespace std;
-class ranjan{
-    int real,imag;
-      friend ranjan sum_complex(ranjan obj1,ranjan obj2);
+
+// 1 + 4i
+// 5 + 8i
+// -------
+// 6 + 12i 
+class Complex{
+    int a, b;
+    friend Complex sumComplex(Complex o1, Complex o2);
     public:
-    void set_data(int r,int i)
-    {
-        real = r;
-        imag = i;
-    }
-    void print_number()
-    {
-        cout<<"your number"<<real<<"+"<<imag<<"i"<<endl;
-    }
-    void set_inputdata()
-    {
-        cout<<"enter the value of x";
-        cin>>real;
-        cout<<"enter the value of y";
-        cin>>imag;
-    }
+        void setNumber(int n1, int n2){
+            a = n1;
+            b = n2;
+        }
+
+        // Below line means that non member - sumComplex funtion is allowed to do anything with my private parts (members)
+        void printNumber(){
+            cout<<"Your number is "<<a<<" + "<<b<<"i"<<endl;
+        }
 };
-ranjan sum_complex(ranjan obj1,ranjan obj2)
-{
-    ranjan obj3;
-    obj3.set_data((obj1.real+obj2.real),(obj1.imag+obj2.imag));
-    return obj3;
+
+Complex sumComplex(Complex o1, Complex o2){
+    Complex o3;
+    o3.setNumber((o1.a + o2.a), (o1.b+o2.b))
+    ;
+    return o3;
 }
-int main()
-{
-    ranjan c1,c2,c3;
-    c1.set_data(2,5);
-    c1.print_number();
-    c2.set_data(4,3);
-    c2.print_number();
-    c3 = sum_complex(c1,c2);
-    c3.print_number();
+
+int main(){
+    Complex c1, c2, sum;
+    c1.setNumber(1, 4);
+    c1.printNumber();
+
+    c2.setNumber(5, 8);
+    c2.printNumber();
+
+    sum = sumComplex(c1, c2);
+    sum.printNumber();
+
     return 0;
 }
+
+/* Properties of friend functions
+1. Not in the scope of class
+2. since it is not in the scope of the class, it cannot be called from the object of that class. c1.sumComplex() == Invalid
+3. Can be invoked without the help of any object
+4. Usually contans the objects as arguments
+5. Can be declared inside public or private section of the class
+6. It cannot access the members directly by their names and need object_name.member_name to access any member.
+
+*/
