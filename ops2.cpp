@@ -1,26 +1,41 @@
 #include<iostream>
-#include<string>
 using namespace std;
-class ranjan{
-    public:
-     string name;
-    int id;
-    void print_name()
-    {
-        cout<<"the name ="<<name<<endl;
-    }
-   void print_id();
-};
-void ranjan::print_id()
+class shop
 {
-    cout<<"the id="<<id<<endl;
-}
+    int itemId[100];
+    int itemPrice[100];
+    int counter;
+    public:
+    void initcounter(void)
+    {
+        counter=0;
+    }
+    void setprice(void);
+    void displayPrice(void);
+};
+ void shop:: setprice(void)
+ {
+    cout<<"enter id of your item no"<<counter+1<<endl;
+    cin>>itemId[counter];
+    cout<<"enter price of your item"<<endl;
+    cin>>itemPrice[counter];
+    counter++;
+ }
+ void shop::displayPrice(void)
+ {
+    for(int i=0;i<counter;i++)
+    {
+        cout<<"the price item with id"<<itemId[i]<<" -is"<<itemPrice[i]<<endl;
+    }
+ }
 int main()
 {
-    ranjan obj;
-    obj.name = "ranjan kumar sahoo";
-    obj.id = 5;
-    obj.print_name();
-    obj.print_id();
-    return 0;
+  shop dukaan;
+  dukaan.initcounter();
+  dukaan.setprice();
+  dukaan.setprice();
+  dukaan.setprice();
+  dukaan.displayPrice();
+  return 0;
+
 }
