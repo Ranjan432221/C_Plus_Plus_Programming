@@ -12,7 +12,6 @@ int main()
          }
          cout<<i<<endl;
          i++;
-       
     }
     while(i<=10);
 }
