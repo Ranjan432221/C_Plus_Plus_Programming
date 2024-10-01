@@ -1,10 +1,11 @@
 #include<iostream>
 using namespace std;
+//use of enum
 int main()
 {
-    for(int i = 0;i<=10;i++)
-    {
-        cout<<" "<<i<<endl;
-    }
-    return 0;
+    enum meal{breakfast,lunch,dinner};
+    // cout<<breakfast;
+     //cout<<lunch;
+     meal m1 = lunch;
+     cout<<m1;
 }
