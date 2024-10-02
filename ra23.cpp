@@ -1,31 +1,21 @@
 #include<iostream>
 using namespace std;
-int main()
+int factorial(int n)
 {
-    int mark;
-    char grade;
-    cout<<"enter students marks:";
-    cin>>mark;
-    switch(mark/10)
+    int f = 1;
+    while(n>0)
     {
-        case 10:
-        case 9:
-        cout<<"grade A"<<endl;
-        break;
-        case 8:
-        cout<<"grade B"<<endl;
-        break;
-        case 7:
-        cout<<"grade C"<<endl;
-        break;
-        case 6:
-        cout<<"grade is D"<<endl;
-        break;
-        case 5:
-        cout<<"grade is E"<<endl;
-        break;
-        default:
-        cout<<"fail"<<endl;
-        break;
+        f = f*n;
+        n = n-1;
     }
+    return f;
+}
+int main()
+{ 
+    int a;
+    cout<<"enter the no which you want to print the factorial=";
+    cin>>a;
+    int b = factorial(a);
+    cout<<"the factorial ="<<b;
+    return 0;
 }

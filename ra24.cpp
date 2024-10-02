@@ -1,17 +1,18 @@
 #include<iostream>
 using namespace std;
-int main()
-{
-    int a = 0, b = 1,c;
-    int n;
-    cout<<"enter any number";
-    cin>>n;
-    for( int i=0;i<=n;i++)
-    {
-        cout<<" "<<a;
-         c = b;
-         b = a;
-         a = c + b;
+  //recursion and recursive function//
+  int factorial(int n)
+  {
+    if(n<=1){
+        return 1;
     }
+    return n * factorial(n-1);
+  }
+  int main()
+  {
+    int a;
+    cout<<"enter a number";
+    cin>>a;
+    cout<<"the factorial of a number is="<<factorial(a);
     return 0;
-}
+  }
