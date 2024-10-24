@@ -2,23 +2,24 @@
 using namespace std;
 int main()
 {
-  int n,b,arm=0,c;
-  cout<<"enter any no:";
-  cin>>n;
-  c=n;
-  while(n!=0)
-  {
-    b = n%10;
-    arm=(b*b*b)+arm;
-    n=n/10;
-  }
-  if(c==arm)
-  {
-    cout<<"it is armstrong no";
-  }
-  else
-  {
-    cout<<"it is not arm strong";
-  }
-  return 0;
+    int n;
+    int arm=0,b,c;
+    cout<<"enter any no";
+    cin>>n;
+    c = n;
+    while(n>0)
+    {
+        b = n%10;
+        arm = arm+(b*b*b);
+        n = n/10;
+    }
+    if(c==arm)
+    {
+        cout<<"it is armstrong no";
+    }
+    else
+    {
+        cout<<"it is not armstroong no";
+    }
+    return 0;
 }

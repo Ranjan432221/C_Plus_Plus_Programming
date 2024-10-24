@@ -1,25 +1,29 @@
 #include<iostream>
 using namespace std;
 int main()
-{
-    int n;
-    cout<<"enter the size of array";
-    cin>>n;
-    cout<<"enter the n no of array="<<n;
-    int num[n];
-    for(int i=0;i<=n;i++)
-    {
-        cin>>num[i];
-    }
-    cout<<"calculate the array num"<<endl;
-    for(int i=0;i<=n;i++)
-    {
-        cout<<" "<<num[i]<<endl;
-    }
-    cout<<"the reverse of array is"<<endl;
-    for(int i=n;i>=0;i--)
-    {
-        cout<<" "<<num[i];
-    }
+{    
+   int n;
+   int sum;
+   cout<<"enter the array size";
+   cin>>n;//[5];
+   cout<<"enter the "<<n<<"no of array";
+   int a[n];
+   for(int i=0;i<n;i++)
+   {
+    cin>>a[i];
+    sum = sum+a[i];
+   }
+   cout<<"sum is:"<<sum;
+//    cout<<"it is the proper array in given below"<<endl;
+//     for(int i=0;i<n;i++)
+//     {   
+//         cout<<a[i]<<" ";
+//     }
+//     cout<<"the susm is given below"<<endl;
+//     for(int i=0;i<n;i++)
+//     {
+//         sum = sum+a[i];
+//         cout<<" "<<a[i];
+    
     return 0;
 }
